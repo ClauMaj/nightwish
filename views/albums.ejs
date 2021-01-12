@@ -1,0 +1,99 @@
+<%- include('header.ejs') %>
+<div class="row mx-0 px-0">
+    <div class="col-sm-6 offset-2 ">
+        <div class="maincontent">
+
+
+            <% if (show===1) { %>
+                <div class=" my-5 row ">
+                    <div class="col-12  px-0">
+                    <a class="mx-0" href="/albums %>" ><button id="btnAll" type="button" class="btn">&lt; back to all albums </button></a>
+                    </div>
+                </div>
+            <% } %>
+                        <% albums.forEach(el => { %>
+                                        
+                        <div class="row">
+                            <div id="circle-shape-example">
+                                <img src="/images/<%= el.artwork %> " alt="<%= el.albumname %> " class="curve">
+                                <h3 > <a class="albumtitle" href="/albums/<%= el.shortname %>"><%= el.albumname %></a></h3>
+                                
+                                <p ><%= el.summary %></p>
+                            </div>
+                        </div>
+
+            <% if (show===1) { %>
+            
+
+                <div class="row pt-5" >
+                    <div class="col-12">
+
+                <caption ><%= el.albumname %> track listing</caption>
+                <table >
+                    <tr style="color:rgb(0, 0, 0);background-color:rgb(59, 12, 12)">
+                        <th scope="col" style="width:2em;padding-left:10px;padding-right:10px;text-align:right;">No.</th>
+                        <th scope="col" style="width:100%;text-align:left;">Title</th>
+                        <th scope="col" style="width:4em;padding-right:10px;text-align:right;">Length</th>
+                    </tr>
+                        <% var counter=1; %>
+                        <% el.tracklist.forEach(element => { %>
+                        <% if (counter%2===0) { %>
+                    <tr style="background-color: rgb(59, 22, 22);">
+                        <% } %>
+
+                    <th><%= counter %></th>
+                    <th><%= element.trackname %></th>
+                    <th><%= element.length %></th>
+                    </tr>
+                    <% counter+=1; %>
+                    <% }) %>
+                    <tr>
+                        <th colspan="2" scope="row" style="padding-right:10px;text-align:right;">Total length:</th>
+                        <td scope="col" style="width:4em;padding-right:10px;text-align:left;"><%= el.totalLength %> </td>
+                    </tr>
+                    
+                </table>
+                    </div>
+                </div>  
+                <div class=" my-5 row ">
+                    <div class="col-4  offset-4 px-0">
+                    <a class="mx-0" href="<%= el.albumApple %>" target="_blank"><img width="100%" height="auto" src="/images/apple.png" alt=""></a>
+                    </div>
+                    <div class="col-4 px-0">
+                    <a class="mx-0" href="<%= el.albumSpotify %>" target="_blank"><img width="100%" height="auto" src="/images/spot.png" alt=""></a>
+                </div>
+                </div>
+            <% } %>
+
+                        
+
+
+            <% if (show===0) { %>
+                <div class=" my-5 row ">
+                    <div class="col-12  px-0">
+                    <a class="mx-0" href="/albums/<%= el.shortname %>" ><button id="btnMore" type="button" class="btn  btn-block">more about this album...</button></a>
+                    </div>
+                </div>
+            <% } %>
+          
+
+
+            <div class="row pb-5 pt-2 pt-0 mx-0 px-0">
+                <div class="col-12">
+            <hr class="style-one">
+            </div>
+            </div>
+
+            <% }) %>
+
+
+        </div>
+    </div><!-- primary -->
+    
+    <aside class="col-sm-4 p-0 m-0 stickside">
+        <img  width="100%" src="/images/fireguitar.png" alt="">
+    </aside><!-- secondary -->
+</div>
+</div>
+
+<%- include('endscripts.ejs') %>
