@@ -8,7 +8,7 @@ router.get('/albums',(req,res) => {
         title: "Nightwish - albums",
         allAlbums: data.albums,
         albums: data.albums,
-        show: 0,
+        pageID: "allAlbums"
     });
 });
 
@@ -20,12 +20,12 @@ router.get('/albums/:albumid',(req,res) => {
             album.push(el);
         }
     });
-
+    let title = "Nightwish" + " - " + album[0].albumname
     res.render('albums',{
-        title: "Nightwish - albums",
+        title: title,
         allAlbums: data.albums,
         albums: album,
-        show: 1,
+        pageID: "oneAlbum"
     });
 });
 

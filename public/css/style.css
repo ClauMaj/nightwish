@@ -6,6 +6,103 @@ body {
   background-color: rgb(41, 41, 41);
   color: rgb(146, 146, 146);
   font-family: 'Yeon Sung', cursive;
+  position: relative;
+}
+#chatDiv{
+  position: absolute;
+  background-image: url(../images/chat.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 7vh;
+  width: 7vw;
+  z-index: 2000;
+  position: fixed;
+  bottom: 5vh;
+  left: 1vw;
+  overflow:visible;
+}
+#chatDiv:hover {
+  cursor: pointer; 
+}
+#chatFormDiv{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 43vh;
+  width: 17vw;
+  background-color: rgb(201, 201, 201);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#minim{
+  display:flex;
+  flex-direction: row-reverse;
+  background-color:#CB5904;
+  top: 0;
+  height: 8%;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  padding-right: 1%;
+  justify-content: end;
+  align-items: center;
+  border: 1px solid black;
+  margin: 1px 1px 0px 1px;
+}
+#minimBox{
+  height: 90%;
+  width: 8%;
+  border: 2px solid black;
+  text-align: center;
+  margin: 1px 1px 0px 1px;
+}
+#minim:hover {
+  cursor: pointer; 
+}
+#minimBox:hover {
+  cursor: pointer; 
+}
+#write{
+  display:flex;
+  top: 90%;
+  height: 10%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 1px 0px 1px;
+}
+#chat{
+  width: 70%;
+  height: 95%;
+  background-color: rgb(27, 27, 27);
+  border: none;
+  color: rgb(146, 146, 146);
+}
+#chat:focus {
+  background-color: rgb(27, 27, 27);
+  border: none;
+}
+#submitText{
+  width: 30%;
+  height: 95%;
+  margin-right: 1px;
+}
+
+#allMessages{
+  height: 82%;
+  width: 100%;
+  margin: 0px 1px 0px 1px;
+}
+#messages{
+  height: 100%;
+  padding-bottom: 10px;
+  color: rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,7 +110,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   color: rgb(138, 40, 40);
 }
-
+.chatLi{
+  list-style-type: none; 
+  margin: 2px 0px 2px 0px;
+}
 
 p {
   font-family: 'Yeon Sung', cursive;
@@ -66,13 +166,17 @@ text-align: right;
   border-width: 0px;
 }
 
+
 input[type="text"], textarea[type="text"] {
   background-color: rgb(27, 27, 27);
   border-color: rgb(27, 27, 27);
+  border: none;
+  outline:none;
 }
 input[type="text"]:focus, textarea[type="text"]:focus {
   background-color: rgb(27, 27, 27);
   border-color: rgb(27, 27, 27);
+  outline:none;
 }
 a:hover {
   text-decoration: none;
@@ -146,15 +250,12 @@ hr.style-one {
 }
 
 .albumtitle {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-family: 'Yeon Sung', cursive;
   font-weight: 300;
   color: rgb(138, 40, 40);
 }
 .albumtitle:hover {
-  font-size: 2.5em;
-  font-family: 'Yeon Sung', cursive;
-  font-weight: 300;
   color: rgb(138, 40, 40);
 }
 

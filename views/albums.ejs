@@ -1,10 +1,10 @@
-<%- include('header.ejs') %>
+<%- include('partials/header.ejs') %>
 <div class="row mx-0 px-0">
     <div class="col-sm-6 offset-2 ">
         <div class="maincontent">
 
 
-            <% if (show===1) { %>
+            <% if (pageID === "oneAlbum") { %>
                 <div class=" my-5 row ">
                     <div class="col-12  px-0">
                     <a class="mx-0" href="/albums %>" ><button id="btnAll" type="button" class="btn">&lt; back to all albums </button></a>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
 
-            <% if (show===1) { %>
+            <% if (pageID === "oneAlbum") { %>
             
 
                 <div class="row pt-5" >
@@ -68,7 +68,7 @@
                         
 
 
-            <% if (show===0) { %>
+            <% if (pageID === "allAlbums") { %>
                 <div class=" my-5 row ">
                     <div class="col-12  px-0">
                     <a class="mx-0" href="/albums/<%= el.shortname %>" ><button id="btnMore" type="button" class="btn  btn-block">more about this album...</button></a>
@@ -96,4 +96,4 @@
 </div>
 </div>
 
-<%- include('endscripts.ejs') %>
+<%- include('partials/endscripts.ejs') %>

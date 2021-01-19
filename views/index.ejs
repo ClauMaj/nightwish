@@ -1,4 +1,4 @@
-<%- include('header.ejs') %>
+<%- include('partials/header.ejs') %>
         <div class="row mx-0 px-0">
             <div class="col-sm-7 offset-1 ">
                 <div class="maincontent">
@@ -6,19 +6,25 @@
                     <article class="article ">
                         <h1 class="article-title mt-4"></h1>
                         <p class="mt-4 mb   -4">&emsp; Nightwish is a symphonic metal band from Kitee, Finland. The band was formed in 1996 by lead songwriter and keyboardist Tuomas Holopainen, guitarist Emppu Vuorinen, and former lead singer Tarja Turunen. The band soon picked up drummer Jukka Nevalainen, and then bassist Sami Vänskä after the release of their debut album, Angels Fall First (1997). In 2001, Vänskä was replaced by Marco Hietala, who also took over the male vocalist role previously filled by Holopainen or guest singers.</p>
+                        <div class="row">
+                            <div class="col-10 offset-1">
+                                <img  width="100%    "src="/images/home.jpg" alt="">
+                            </div>
+                        </div>
                         
-                        <img  width="100%    "src="/images/home.jpg" alt="">
                     </article><!-- article -->
                     <article class="article ">
                         <h1 class="article-title mt-4 mb-4">Best of...</h1>
                         
-                        
+                        <div class="row">
+                            <div class="col-10 offset-1">
                         <iframe width="100%" height="600px" src="https://www.youtube.com/embed/5odBK6ebOf8?start=10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </article><!-- article -->
                     
                     
+                </div>
+            </div>
 
-
+        </article><!-- article -->
 
                 </div>
             </div><!-- primary -->
@@ -28,4 +34,6 @@
             </aside><!-- secondary -->
         </div>
     </div>
-    <%- include('endscripts.ejs') %>
+    <%- include('partials/endscripts.ejs') %>
+
+    

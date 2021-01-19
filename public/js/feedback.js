@@ -1,6 +1,5 @@
 $(()=>{
 
-    
 
     $('.feedback-form').submit(e =>{
         e.preventDefault();
@@ -13,7 +12,7 @@ $(()=>{
         
     })
 
-    
+
     const updateFeedback = (data) =>{
 
         
@@ -21,7 +20,7 @@ $(()=>{
             
             //concatenate output
             data.forEach((item, key) =>{
-                
+                console.log(key);
                 output += '     <div class="feedback-item item-list media-list">';
                 output += '       <div class="feedback-item media">';
                 output += '       <div class="media-left"><button class="feedback-delete btn btn-xs btn-danger mx-3"><span id="' + key + '" class="glyphicon glyphicon-remove"></span></button></div>';
