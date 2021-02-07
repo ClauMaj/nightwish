@@ -6,7 +6,12 @@ body {
   background-color: rgb(41, 41, 41);
   color: rgb(146, 146, 146);
   font-family: 'Yeon Sung', cursive;
-  position: relative;
+}
+.sticky {
+  top: 0;
+  width: 100%;
+  position: fixed !important;
+  z-index: 9999;
 }
 #chatDiv{
   position: absolute;
@@ -186,6 +191,7 @@ a:hover {
 .navbar{
   font-size: 2rem;
   background-color: rgb(41, 41, 41)!important;
+  position: relative;
 }
 .dropdown-menu{
   background-color: rgb(41, 41, 41)!important;
@@ -196,15 +202,46 @@ a:hover {
   color: rgb(146, 146, 146);
 }
 
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  visibility: hidden;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: rgb(117, 117, 117);
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active #header {
+  left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
 
 .headimg {
+  position: inherit;
   height: 40vh;
   width: 100%;
   margin: 0;
   background: url(../images/banner.jpg) ;
   background-size: 100% ;
   overflow: hidden;
-  background-attachment: fixed;
+  background-size: cover ;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -222,6 +259,27 @@ nav a img {
   height: 8vh;
   width: auto;
 
+}
+
+@media (max-width: 992px) {
+  #mainNav {
+  visibility: hidden;
+  height: 0;
+}
+.mobile-nav-toggle {
+  visibility: visible;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
 }
 
 
