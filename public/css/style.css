@@ -99,6 +99,10 @@ body {
   margin: 1px 1px 0px 1px;
 }
 #minimBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(117, 117, 117);
   height: 90%;
   width: 8%;
   border: 2px solid black;
